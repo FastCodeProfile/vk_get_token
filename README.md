@@ -33,4 +33,4 @@
     aiohttp-3.8.4 Async http client/server framework (asyncio)
 
 ## Запуск:
-    python __main__.py
+    python main.py

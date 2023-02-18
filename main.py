@@ -78,6 +78,7 @@ async def main() -> None:
         status, response = await vk.get_token()  # Получаем токен страницы ВК
         if status:  # Если получение токена удалось
             data = dict(
+                user_id=response["user_id"],
                 username=account['username'],
                 password=account['password'],
                 url_profile=f'https://vk.com/id{response["user_id"]}',

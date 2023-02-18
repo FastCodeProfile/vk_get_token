@@ -38,7 +38,7 @@ class VK:
             async with session.get(url=host, params=params) as response:
                 json_response = await response.json()
                 if 'error' in json_response:
-                    return False, json_response["error"]["error_msg"]
+                    return False, json_response["error_description"]
                 else:
                     return True, json_response
 
@@ -86,7 +86,7 @@ async def main() -> None:
             output_data[key] = data
             print(f'Получен токен страницы - {data["url_profile"]}')
         else:  # Если получение токена не удалось
-            print(f'Произошла ошибка: {response}')
+            print(f'Возникла ошибка аккаунта: {response}')
 
     file_output(output_data=output_data)  # Записываем полученные данные в файл
 
